@@ -23,7 +23,10 @@ def Get_From_Server():
     data = response.read()
     text = data.decode('utf-8') 
     Get_Count += 1
-    
+    if Get_Count % 15 == 0:
+        GetFromServer.stop()
+        time.sleep(5)
+        GetFromServer = RepeatedTimer(0.20, Get_From_Server)
     return
 # This is used for setting up and starting the server
 def StartServer():
