@@ -7,7 +7,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import time
 import threading
 import urllib.request 
-import colorama
+import colorama # pip install
 from colorama import Fore, Back, Style
 
 
