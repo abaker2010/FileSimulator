@@ -3,6 +3,8 @@
 
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import os
+import colorama
+from colorama import Fore, Back, Style
 
 # HTTPRequestHandler class
 class HttpRequestHandler(BaseHTTPRequestHandler):
@@ -22,7 +24,8 @@ class HttpRequestHandler(BaseHTTPRequestHandler):
         # Send headers
         self.send_header('Content-type','text/html')
         self.end_headers()
+        # Send message back to client
         message = self.Load_Main_Page()
         returned = bytes(message, "utf8")
-        print("[?] Server Sending Package")
+        print(Fore.LIGHTGREEN_EX + "[-] Server Sending Package\n" + Style.RESET_ALL)
         return
