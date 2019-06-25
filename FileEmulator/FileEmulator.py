@@ -49,7 +49,7 @@ def main():
     Serverthread.setDaemon(True)
     Serverthread.start()
 
-    GetFromServer = RepeatedTimer(1.5, Get_From_Server)
+    GetFromServer = RepeatedTimer(0.20, Get_From_Server)
 
     while True:
         time.sleep(1000)
