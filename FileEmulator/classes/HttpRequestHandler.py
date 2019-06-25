@@ -22,10 +22,7 @@ class HttpRequestHandler(BaseHTTPRequestHandler):
         # Send headers
         self.send_header('Content-type','text/html')
         self.end_headers()
-        # Send message back to client
         message = self.Load_Main_Page()
-        # Write content as utf-8 data
-        #self.wfile.write("[?] " + bytes(message, "utf8"))
         returned = bytes(message, "utf8")
         print("[?] Server Sending Package")
         return
